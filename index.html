@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Trivia Game</title>
+
+</head>
+
+<body>
+    <br>
+    <br>
+    <div id="headbox" class="container">
+        <a href="#">
+            <img id="headerImage" src="assets/images/logo.jpg" alt="headerpic">
+        </a>
+    </div>
+    <br>
+    <br>
+    <div id="questionAnswerBox" class="container">
+        <div class="container" id="timerCount"></div>
+
+        <div id="questionBox" class="container"><p>Answer the questions before the time runs out muggle click start to begin</p></div>
+        <br>
+        <div id="screenChange">
+        <div class="container meow">
+            <p id="choiceA">
+                Answer #1
+                <button id="buttonA" data-choice="A" class="btn btn-primary selectButton">
+                    Select A
+                </button>
+            </p>
+        </div>
+        <br>
+        <div class="container meow">
+            <p id="choiceB">
+                Answer #2
+                <button id="buttonB" data-choice="B" class="btn btn-primary selectButton">
+                    Select B
+                </button>
+            </p>
+        </div>
+        <br>
+        <div class="container meow">
+            <p id="choiceC">
+                Answer #3
+                <button id="buttonC" data-choice="C" class="btn btn-primary selectButton">
+                    Select C
+                </button>
+            </p>
+
+        </div>
+
+        <br>
+        <div class="container meow">
+            <p id="choiceD">
+                Answer #4
+                <button id="buttonD" data-choice="D" class="btn btn-primary selectButton">
+                    Select D
+                </button>
+            </p>
+
+        </div>
+        <br>
+        <br>
+    </div>
+    </div>
+    <br>
+<div id="start-button"> <button  class="btn btn-primary">Start/Restart</button></div>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
