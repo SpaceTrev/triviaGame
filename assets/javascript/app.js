@@ -11,7 +11,7 @@ $(document).ready(function () {
     var answerArray3 =  ["Albus", "Richard", "John", "Tofu"];
     var answerArray4 = ["Hedgwig", "Meowth", "PBR", "Kitty"];
     var gifArray = [];
-    var correctAnswers = ["Helen HufflePuff", "Bassilisk", "12 Grimmauld Place ,Borough of Islington, London", "Albus", "Hedgwig"]
+    var correctAnswers = ["Helen HufflePuff", "Bassilisk", "12 Grimmauld Place, Borough of Islington, London", "Albus", "Hedgwig"]
     var questionCounter = 0;
     var selectedAnswer = [];
     var clock;
@@ -35,7 +35,7 @@ $(document).ready(function () {
         console.log($(this).attr('data-choice'));
         selectedAnswer.push($(this).attr('data-choice'));
         console.log(selectedAnswer);
-        if (selectedAnswer[0] === correctAnswers[0]) {
+        if (selectedAnswer[0] == correctAnswers[0]) {
             correctAnswers++;
             $("#questionBox").text(questionArray[1]);
             $("#choiceA").html(answerArray1[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton1">Select A</button>');
@@ -55,7 +55,7 @@ $(document).ready(function () {
         console.log($(this).attr('data-choice'));
         selectedAnswer.push($(this).attr('data-choice'));
         console.log(selectedAnswer);
-        if (selectedAnswer[1] === correctAnswers[1]) {
+        if (selectedAnswer[1] == correctAnswers[1]) {
             correctAnswers++;
             $("#questionBox").text(questionArray[2]);
             $("#choiceA").html(answerArray2[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton2">Select A</button>');
@@ -75,7 +75,7 @@ $(document).ready(function () {
         console.log($(this).attr('data-choice'));
         selectedAnswer.push($(this).attr('data-choice'));
         console.log(selectedAnswer);
-        if (selectedAnswer[3] === correctAnswers[3]) {
+        if (selectedAnswer[2] == correctAnswers[2]) {
             correctAnswers++;
             $("#questionBox").text(questionArray[3]);
             $("#choiceA").html(answerArray3[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton3">Select A</button>');
@@ -95,7 +95,7 @@ $(document).ready(function () {
         console.log($(this).attr('data-choice'));
         selectedAnswer.push($(this).attr('data-choice'));
         console.log(selectedAnswer);
-        if (selectedAnswer[4] === correctAnswers[4]) {
+        if (selectedAnswer[3] == correctAnswers[3]) {
             correctAnswers++;
             $("#questionBox").text(questionArray[4]);
             $("#choiceA").html(answerArray4[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton4">Select A</button>');
@@ -115,32 +115,33 @@ $(document).ready(function () {
         console.log($(this).attr('data-choice'));
         selectedAnswer.push($(this).attr('data-choice'));
         console.log(selectedAnswer);
-        if (selectedAnswer[5] === correctAnswers[5]) {
+        if (selectedAnswer[4] == correctAnswers[4]) {
             correctAnswers++;
-            $("#questionBox").text(questionArray[5]);
-            $("#choiceA").html(answerArray5[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton5">Select A</button>');
-            $("#choiceB").html(answerArray5[1] + '<button id="buttonB"data-choice="B" class="btn btn-primary selectButton5">Select B</button>');
-            $("#choiceC").html(answerArray5[2] + '<button id="buttonC"data-choice="C" class="btn btn-primary selectButton5">Select C</button>');
-            $("#choiceD").html(answerArray5[3] + '<button id="buttonD"data-choice="D" class="btn btn-primary selectButton5">Select D</button>');
+            $("#questionBox").html("<p>Correct answers: " + correctAnswers + " Incorrect Answers: " + incorrectAnswers + "</p>");
+            $("#timer-count").empty();
+            // $("#questionBox").text(questionArray[5]);
+            // $("#choiceA").html(answerArray5[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton5">Select A</button>');
+            // $("#choiceB").html(answerArray5[1] + '<button id="buttonB"data-choice="B" class="btn btn-primary selectButton5">Select B</button>');
+            // $("#choiceC").html(answerArray5[2] + '<button id="buttonC"data-choice="C" class="btn btn-primary selectButton5">Select C</button>');
+            // $("#choiceD").html(answerArray5[3] + '<button id="buttonD"data-choice="D" class="btn btn-primary selectButton5">Select D</button>');
         } else {
             incorrectAnswers++
-            $("#questionBox").text(questionArray[5]);
-            $("#choiceA").html(answerArray5[0] + '<button id="buttonA"data-choice="A" class="btn btn-primary selectButton5">Select A</button>');
-            $("#choiceB").html(answerArray5[1] + '<button id="buttonB"data-choice="B" class="btn btn-primary selectButton5">Select B</button>');
-            $("#choiceC").html(answerArray5[2] + '<button id="buttonC"data-choice="C" class="btn btn-primary selectButton5">Select C</button>');
-            $("#choiceD").html(answerArray5[3] + '<button id="buttonD"data-choice="D" class="btn btn-primary selectButton5">Select D</button>');
+            $("#questionBox").html("<p>Correct answers: " + correctAnswers + " Incorrect Answers: " + incorrectAnswers + "</p>");
+            $("#timer-count").clear();
+            
         }
     });
-    $(document).on("click", ".selectButton5", function (event) {
-        console.log($(this).attr('data-choice'));
-        selectedAnswer.push($(this).attr('data-choice'));
-        console.log(selectedAnswer);
-        if (selectedAnswer[5] === correctAnswers[5]) {
-            correctAnswers++;
-        } else {
-            incorrectAnswers++
-        }
-    });
+    // $(document).on("click", ".selectButton5", function (event) {
+    //     console.log($(this).attr('data-choice'));
+    //     selectedAnswer.push($(this).attr('data-choice'));
+    //     console.log(selectedAnswer);
+    //     if (selectedAnswer[5] == correctAnswers[5]) {
+    //         correctAnswers++;
+
+    //     } else {
+    //         incorrectAnswers++
+    //     }
+    // });
 
     function reset() {
         questionCounter = 0;
